@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <title>Encriptador de Texto</title>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <img class="logo" src="img/logo/LogoSmall.png" alt="Logo">
+            <h1>TextLock</h1>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <section class="in">
+                <textarea class="text-area" placeholder="Ingrese el texto a encriptar" oninput="validarCampo()"></textarea>
+                <div>
+                    <h6 class="informacion"><span>!</span> Sólo letras minúsculas y sin acentos</h6>
+                </div>
+                <div class="botones">
+                    <button class="btn-encriptar" id="btn-encriptar">Encriptar</button>
+                    <button class="btn-desencriptar" id="btn-desencriptar">Desencriptar</button>
+                </div>
+            </section>
+            
+            <section class="return">
+                
+                <div class="fondo-mensaje">
+                    <textarea class="mensaje" placeholder="Ingrese texto a desecriptar" oninput="validarMensaje()"></textarea>
+                </div>
+                <div class="copy">
+                    <div class="copy-modal" id="copy-modal">
+                        <h3>Copiado</h3>
+                    </div>
+                    <button class="btn-copiar" id="btn-copiar">Copiar</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-flex">
+            <p>| &nbsp; Encriptador de texto By Ricardo Vargas &nbsp; |</p>
+            <p>&nbsp; &copy; TextLock | All rights reserved 2023</p>
+        </div>
+    </footer>
+<script src="js/main.js"></script>
+</body>
+</html>
