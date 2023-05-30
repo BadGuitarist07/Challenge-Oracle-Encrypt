@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
     <div class="container">
         <main>
             <section class="in">
-                <textarea class="text-area" placeholder="Ingrese el texto a encriptar" oninput="validarCampo()"></textarea>
+                <textarea id="textarea1" class="text-area" placeholder="Ingrese el texto a encriptar" oninput="validarMensaje();"></textarea>
                 <div>
                     <h6 class="informacion"><span>!</span> Sólo letras minúsculas y sin acentos</h6>
                 </div>
@@ -33,13 +34,13 @@
             <section class="return">
                 
                 <div class="fondo-mensaje">
-                    <textarea class="mensaje" placeholder="Ingrese texto a desecriptar" oninput="validarMensaje()"></textarea>
+                    <textarea class="mensaje" placeholder="Ingrese texto a desecriptar" oninput="ajustarAlturaTextArea();"></textarea>
                 </div>
                 <div class="copy">
                     <div class="copy-modal" id="copy-modal">
                         <h3>Copiado</h3>
                     </div>
-                    <button class="btn-copiar" id="btn-copiar">Copiar</button>
+                    <button id="btn-copiar">Copiar</button>
                 </div>
             </section>
         </div>

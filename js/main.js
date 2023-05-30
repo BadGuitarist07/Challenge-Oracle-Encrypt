@@ -2,33 +2,17 @@ const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
 const btnCopiar = document.getElementById("btn-copiar");
 const copyModal = document.getElementById("copy-modal");
-const regex = /^[a-z0-9]+$/;
 
 // Funcion para validar que se ingresen solo minusculas sin caracteres especiales en el TextArea
-function validarCampo() {
-    const valor = textArea.value;
-    const regex = /^[a-z0-9]+$/; // patrón que permite letras, números y espacios en blanco
-    
-    if (!regex.test(valor)) {
-        alert('No se permiten mayúsculas ni caracteres especiales');
-        textArea.value = valor.replace(/[^a-z0-9 ]/g, ''); // elimina los caracteres no permitidos
-
-    }
-}
-
-// Funcion para validar que se ingresen solo minusculas sin caracteres especiales en el Mensaje
-
 function validarMensaje() {
-    const valor = mensaje.value;
-    const regex = /^[a-z0-9]+$/; // patrón que permite letras, números y espacios en blanco
+    const valor = textArea.value;
+    const regex = /[^a-z0-9\s\b]/g; // Patrón que no permite caracteres especiales ni mayúsculas, pero si espacios y retroceso "borrar"
     
-    if (!regex.test(valor)) {
-        alert('No se permiten mayúsculas ni caracteres especiales');
-        mensaje.value = valor.replace(/[^a-z0-9 ]/g, ''); // elimina los caracteres no permitidos
-
+    if (regex.test(valor)) {
+        alert('No se permiten caracteres especiales ni mayúsculas');
+        textArea.value = valor.replace(regex, ''); // Elimina los caracteres no permitidos excepto espacios en blanco
     }
 }
-
 
 // Funcionalidad del boton de copiar
 
@@ -40,22 +24,24 @@ function ocultarModal() {
 function copiar() {
     mensaje.select();
     document.execCommand("copy");
+    copyModal.classList.remove('oculto');
     copyModal.style.display = "flex";
     setTimeout(ocultarModal, 2000);
-    
 }
 
-btnCopiar.addEventListener("click" , copiar);
+btnCopiar.addEventListener('click', copiar);
 
 //Se genera función que encripta el texto y el boton con su escuchador para que se ejecute la encriptacion
 
 function doEncriptar() {
-    let textoEncriptado = encriptar(textArea.value);
-    mensaje.value = textoEncriptado;
-    textArea.value = "";
-    mensaje.style.backgroundImage = "none";
-    btnCopiar.style.display = "block";
-    
+    if(textArea.value.trim()=== "") {
+        alert("Por favor, ingrese el texto");
+    } else {
+        let textoEncriptado = encriptar(textArea.value);
+        mensaje.value = textoEncriptado;
+        textArea.value = "";
+        btnCopiar.style.display = "inline-block";
+    }
 }
 
 let btnEncriptar = document.getElementById("btn-encriptar");
@@ -82,11 +68,15 @@ function encriptar(stringAEncriptar) {
 //Se genera función que desencripta el texto y el boton con su escuchador para que se ejecute la desencriptacion
 
 function doDesencriptar() {
-    let textoEncriptado = desencriptar(mensaje.value);
-    textArea.value = "";
-    mensaje.value = textoEncriptado;
-    mensaje.style.backgroundImage = "none";
-    btnCopiar.style.display = "block";
+    if(mensaje.value.trim() === "" ) {
+        alert("Por favor ingrese el texto a desencriptar");
+    } else {
+        let textoEncriptado = desencriptar(mensaje.value);
+        textArea.value = "";
+        mensaje.value = textoEncriptado;
+        mensaje.style.backgroundImage = "none";
+        btnCopiar.style.display = "block";
+    }
 }
 
 let btnDesencriptar = document.getElementById("btn-desencriptar");
