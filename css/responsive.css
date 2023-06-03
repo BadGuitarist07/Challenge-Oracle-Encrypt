@@ -1,67 +1,63 @@
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-
+    
     .container {
         width: 80%;
         margin: auto;
     }
-
+    
     header {
         width: 100%;
         margin: auto;
     }
-
+    
     .logo {
         width: 50px;
         height: 50px;
     }
-
+    
     .nav h1 {
         font-size: 35px;
     }
-
-    body {
-
-    }
-
+    
     main {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
-
+    
     .in {
         display: block;
         width: 100%;
         margin: auto;
         text-align: center;
     }
-
+    
     .text-area {
         border-radius: 25px;
         padding: 50px;
         margin-top: 50px;
         margin-bottom: 20px;
-        width: 800px;
+        width: 100%px;
     }
-
+    
     .in .text-area:focus, .return .mensaje:focus {
         border-radius: 25px;
         box-shadow: 0px 0px 20px 5px #ffffff6e;
     }
-
+    
     .informacion {
         left: 0;
         margin: 20px;
         font-size: 30px;
     }
-
+    
     .informacion span {
         font-size: 30px;
         width: 40px;
         height: 40px;
     }
-
+    
     .botones {
         margin: auto;
         width: 100%;
@@ -70,19 +66,19 @@
         align-items: center;
         justify-content: center;
     }
-
+    
     .btn-encriptar {
         margin: auto;
         width: 100%;
         font-size: 30px;
     }
-
+    
     .btn-desencriptar {
         width: 100%;
         margin: auto;
         font-size: 30px;
     }
-
+    
     .return {
         width: 100%;
         margin: auto;
@@ -93,14 +89,14 @@
         flex-direction: column;
         margin-top: 50px;
         margin-bottom: 50px;
-
+        
     }
-
+    
     .fondo-mensaje {
         margin: auto;
         width: 100%;
     }
-
+    
     .mensaje {
         border-radius: 25px;
         width: 100%;
@@ -108,26 +104,140 @@
         padding: 50px;
         margin: auto;
     }
-
+    
     .copy {
         position: relative;
-        bottom: 20px;
+        bottom: 70px;
         width: 100%;
         margin: auto;
     }
-
+    
     .btn-copiar {
+        margin: auto;
         width: 90%;
         margin: auto;
         font-size: 30px;
     }
-
+    
     .copy-modal {
         position: absolute;
         width: 90%;
         margin: auto;
-        top: -90px;
+        top: -20px;
         left: 40px;
         font-size: 30px;
+    }
+}
+
+/* Estilos para celulares  */
+
+@media screen and (max-width: 480px) {
+    
+
+    header {
+        width: 100%;
+        margin: auto;
+    }
+
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+
+    .logo {
+        margin: auto;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .nav h1 {
+        margin-right: 50px;
+        font-size: 55px;
+    }
+    
+    main {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .in {
+        width: 100%;
+    }
+
+    .text-area {
+        padding: 30px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .informacion {
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .return {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    .copy {
+        position: relative;
+        bottom: 130px;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .btn-copiar {
+        margin: auto;
+        width: 90%;
+        font-size: 30px;
+    }
+    
+    .copy-modal {
+        position: absolute;
+        width: 90%;
+        margin: auto;
+        top: -20px;
+        left: 20px;
+        font-size: 30px;
+    }
+
+    footer {
+        margin-top: 50px;
+        width: 100%;
+        margin: auto;
+        padding: 50px;
+    }
+
+    .footer-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer-flex p {
+        padding: 0;
+        margin: 20px;
+        width: 100%;
+        font-size: 24px;
+
     }
 }
